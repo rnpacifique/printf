@@ -2,7 +2,7 @@
 #define MAIN_H
 
 #include <stdarg.h>
-#include <unistd.>
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -40,7 +40,7 @@ struct fmt
 typedef struct fmt fmt_r;
 
 int _printf(const char *format, ...);
-int handle_print(constant char *fmt, int *i, va_list list, char buffer[], int width, int precision, int size);
+int handle_print(constant char *fmt, int *a, va_list arguments, char buffer[], int width, int precision, int size);
 
 /****************** FUNCTIONS ******************/
 
