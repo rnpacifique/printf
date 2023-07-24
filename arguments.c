@@ -101,6 +101,28 @@ int print_percent(__attribute__((unused)) va_list elements)
 	return (1);
 }
 
+/**
+ * print_string - print string
+ * @elements: list of argments
+ * Return: char
+ */
+
+int print_string(va_list elements)
+{
+	int a;
+	const char *str;
+
+	str = va_arg(elements, const char *);
+	if (str == NULL)
+	{
+		str = "null";
+	}
+	for (a = 0; str[a] != '\0'; a++)
+	{_putchar(str[a]);
+	}
+	return (a);
+
+}
 
 
 
