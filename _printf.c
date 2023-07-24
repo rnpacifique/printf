@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int printed_chars;
+	int num_printed;
 
 	conver_t func_list[] = {{"c", print_char}, {"s", print_string},
 		{"%", print_percent}, {"d", print_int}, {"i", print_int}, {NULL, NULL}};
