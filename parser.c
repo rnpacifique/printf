@@ -9,7 +9,7 @@
  * Return: printed characters
  */
 
-int parser(const char *format, convert_t func_list[], va_list elements)
+int parser(const char *format, conver_t func_list[], va_list elements)
 {
 	int idx_a, idx_b, output_val, num_printed;
 
@@ -18,11 +18,11 @@ int parser(const char *format, convert_t func_list[], va_list elements)
 	{
 		if (format[idx_a] == '%')
 		{
-			for (idx_b = 0; func_list[idx_b].sym != NULL; idx_b)
+			for (idx_b = 0; func_list[idx_b].sym != NULL; idx_b++)
 			{
 				if (format[idx_a + 1] == func_list[idx_b].sym[0])
 				{
-					output_val = func_list[j].f(elements);
+					output_val = func_list[idx_b].f(elements);
 					if (output_val == -1)
 						return (-1);
 					num_printed += output_val;
@@ -36,7 +36,7 @@ int parser(const char *format, convert_t func_list[], va_list elements)
 				{
 					_putchar(format[idx_a]);
 					_putchar(format[idx_a + 1]);
-					num__printed = num_printed + 2;
+					num_printed = num_printed + 2;
 				}
 				else
 					return (-1);

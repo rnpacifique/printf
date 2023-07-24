@@ -24,11 +24,11 @@ int print_number(va_list elements)
 	else
 		n = nbr;
 	for (; n / check > 9;)
-		ckeck *= 10;
+		check *= 10;
 	for (; check != 0;)
 	{
 		leng += _putchar('0' + n / check);
-		n % = check;
+		n %= check;
 		check /= 10;
 	}
 	return (leng);
@@ -41,6 +41,7 @@ int print_number(va_list elements)
 int print_unsigned_number(unsigned int nbr)
 {
 	int leng;
+	int check;
 	unsigned int n;
 
 	leng = 0;
@@ -52,7 +53,7 @@ int print_unsigned_number(unsigned int nbr)
 		check *= 10;
 	for (; check != 0;)
 	{
-		leng = leng = leng + _putchar('0' + n / check);
+		leng = leng + _putchar('0' + n / check);
 		n %= check;
 		check /= 10;
 	}
@@ -94,7 +95,7 @@ int print_int(va_list elements)
  * Return: '%'
  */
 
-int print_percent(_attribute_((unused)) va_list elements)
+int print_percent(__attribute__((unused)) va_list elements)
 {
 	_putchar('%');
 	return (1);
